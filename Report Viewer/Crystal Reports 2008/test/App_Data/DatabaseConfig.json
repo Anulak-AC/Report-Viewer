@@ -1,0 +1,11 @@
+﻿{
+  "database": {
+    "server": "127.0.0.1",  
+    "databaseName": "ALC_QCreport",  
+    "authentication": {
+      "method": false,  
+      "username": "sa", 
+      "password": "P@ssw0rd"
+    }
+  }
+}

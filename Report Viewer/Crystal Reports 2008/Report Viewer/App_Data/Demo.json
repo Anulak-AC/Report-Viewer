@@ -1,0 +1,32 @@
+﻿                                                                                                             {    
+  "report" : {
+    "reportformat": "rpt",
+    "reportFile": "CrystalReport1.rpt"
+  },
+  "ExportFile": {
+    "format": "pdf",
+    "ExportFileName": "Report_12345",
+    "ExportFilePath": "report",
+    "SendAllstoragePath": false,
+    "DeleteAfterDate": 0  
+  },
+  "reportData": {
+    "reportSqlType": true,
+    "reportTableName": "Districts", 
+    "sqlQuery": "",
+    "parameters": [
+      {
+        "name": "@DateStarting",
+        "value": "2023-08-15"
+      },
+      {
+        "name": "@DateEnding",
+        "value": "2023-09-27"
+      },
+      {
+        "name": "@AluconGroupType",
+        "value": "AAAAA8AA~LIT~(A)"
+      }
+    ]
+  }
+}
