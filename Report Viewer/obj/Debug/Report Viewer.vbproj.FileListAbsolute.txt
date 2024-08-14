@@ -86,3 +86,4 @@ C:\Users\anulak\Documents\Visual Studio 2015\Projects\Report Viewer\Report Viewe
 C:\Users\anulak\Documents\Visual Studio 2015\Projects\Report Viewer\Report Viewer\obj\Debug\Report Viewer.dll
 C:\Users\anulak\Documents\Visual Studio 2015\Projects\Report Viewer\Report Viewer\obj\Debug\Report Viewer.xml
 C:\Users\anulak\Documents\Visual Studio 2015\Projects\Report Viewer\Report Viewer\obj\Debug\Report Viewer.pdb
+C:\Users\anulak\Documents\Visual Studio 2015\Projects\Report Viewer\Report Viewer\obj\Debug\Report Viewer.vbprojResolveAssemblyReference.cache

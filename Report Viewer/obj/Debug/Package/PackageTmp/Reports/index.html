@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Report</title>
+</head>
+<body>
+    <h1>Generate Report</h1>
+    <button id="generateReport">Generate Report</button>
+    <div id="response"></div>
+
+    <script>
+        document.getElementById('generateReport').addEventListener('click', function () {
+
+            var data = JSON.stringify({
+                "report": {
+                    "reportformat": "rpt",
+                    "reportFile": "ST_GenerateRunningNumber.rpt"
+                },
+                "ExportFile": {
+                    "format": "pdf",
+                    "ExportFileName": "Report_12345",
+                    "ExportFilePath": "report",
+                    "SendAllstoragePath": false,
+                    "DeleteAfterDate": 0
+                },
+                "reportData": {
+                    "reportSqlType": true,
+                    "reportTableName": "",
+                    "sqlQuery": "",
+                    "parameters": [
+                        {
+                            "name": "@SequenceID",
+                            "value": 1
+                        }
+                    ]
+                }
+            });
+
+            var xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+
+            xhr.addEventListener("readystatechange", function () {
+                if (this.readyState === 4) {
+                    if (this.status === 200) {
+                        // Handle success
+                        document.getElementById('response').innerHTML = '<p>Report generated successfully. Check the server response for details.</p>';
+                    } else {
+                        // Handle error
+                        document.getElementById('response').innerHTML = '<p class="error">Error generating report: ' + this.status + ' - ' + this.statusText + '</p>';
+                    }
+                }
+            });
+
+            xhr.open("POST", "http://localhost:50447/Reports/ViewReport");
+            xhr.setRequestHeader("Content-Type", "application/json");
+
+            xhr.send(data);
+
+        });
+    </script>
+</body>
+</html>

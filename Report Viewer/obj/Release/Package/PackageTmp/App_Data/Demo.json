@@ -12,6 +12,7 @@
   },
   "reportData": {
     "reportSqlType": true,
+    "reportDatabase": "ALC_SSQA", 
     "reportTableName": "Districts", 
     "sqlQuery": "",
     "parameters": [

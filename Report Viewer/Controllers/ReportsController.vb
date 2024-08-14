@@ -9,7 +9,7 @@ Imports ReportViewer.Models
 Public Class ReportsController
     Inherits Controller
 
-    Private ReadOnly _connectionString As String = GetConnectionString()
+    Private _connectionString As String = GetConnectionString()
     Public Shared connectionInfo As New ConnectionInfo()
 
     ' GET: /Reports/EnterParameters
@@ -32,6 +32,7 @@ Public Class ReportsController
 
             ' Deserialize JSON data into ReportRequest object
             Dim reportRequest As ReportRequest = JsonConvert.DeserializeObject(Of ReportRequest)(jsonData)
+            _connectionString = GetConnectionString(reportRequest.reportData.reportDatabase)
 
             ' Create a new ReportDocument instance
             Dim reportDocument As New ReportDocument()
@@ -116,7 +117,7 @@ Public Class ReportsController
         End Try
     End Sub
 
-    Private Shared Function GetConnectionString() As String
+    Private Shared Function GetConnectionString(Optional databaseName As String = Nothing) As String
         Try
             Dim configFilePath As String = System.Web.Hosting.HostingEnvironment.MapPath("~/App_Data/DatabaseConfig.json")
             If configFilePath Is Nothing OrElse Not System.IO.File.Exists(configFilePath) Then
@@ -133,7 +134,9 @@ Public Class ReportsController
             Dim dbName As String = dbConfig.database.databaseName
             Dim user As String = dbConfig.database.authentication.username
             Dim password As String = dbConfig.database.authentication.password
-
+            If databaseName IsNot Nothing Then
+                dbName = databaseName
+            End If
             connectionInfo.ServerName = server
             connectionInfo.DatabaseName = dbName
             connectionInfo.UserID = user

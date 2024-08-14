@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="Report Viewer" />
+  <setParameter name="DefaultConnection-Web.config Connection String" value="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=&quot;|DataDirectory|\aspnet-Report Viewer-20240806112146.mdf&quot;;Initial Catalog=&quot;aspnet-Report Viewer-20240806112146&quot;;Integrated Security=True" />
+</parameters>

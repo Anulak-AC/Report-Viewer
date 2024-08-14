@@ -2,12 +2,7 @@
     ViewData("Title") = "Home Page"
 
 End Code
-
-<html>
-<body>
-    <a href="@Url.Action("ViewReport", "Reports")">Download Report</a>
-</body>
-</html>
+    
 
 <div class="jumbotron">
     <h1>ASP.NET</h1>

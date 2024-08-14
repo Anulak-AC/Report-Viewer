@@ -1,11 +1,11 @@
 ﻿{
   "database": {
-    "server": "127.0.0.1",  
-    "databaseName": "ALC_QCreport",  
+    "server": "dbsl9server",  
+    "databaseName": "ALC_SSQA",  
     "authentication": {
       "method": false,  
       "username": "sa", 
-      "password": "P@ssw0rd"
+      "password": "Swknptww#243"
     }
   }
-}
+}   
